@@ -23,8 +23,8 @@ async def upgrade(bot,update):
 	
 	Pay Using Upi I'd ```Full_Free@paytm```
 	
-	After Payment Send Screenshots Of 
-        Payment To Admin @Farooq_is_KING"""
+	No Payment Send TG ID Of 
+        Send TG ID To Group @WOODcraft_Mirror_Topic"""
 	keybord = InlineKeyboardMarkup([[ 
         			InlineKeyboardButton("ADMIN 🛂",url = "https://t.me/Farooq_is_KING")], 
         			[InlineKeyboardButton("Paytm",url = "https://t.me/Farooq_is_KING"),
@@ -53,8 +53,8 @@ async def upgradecm(bot,message):
 	
 	Pay Using Upi I'd ```Full_Free@paytm```
 	
-	After Payment Send Screenshots Of 
-        Payment To Admin @Farooq_is_KING"""
+	No Payment Send TG ID Of 
+        Send TG ID To Group @WOODcraft_Mirror_Topic"""
 	keybord = InlineKeyboardMarkup([[ 
         			InlineKeyboardButton("ADMIN 🛂",url = "https://t.me/Farooq_is_KING")], 
         			[InlineKeyboardButton("Paytm",url = "https://t.me/Farooq_is_KING"),
