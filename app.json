@@ -1,13 +1,13 @@
 
 {
 
-    "name": "Gangster Baby Renamer Bot",
+    "name": "WD Renamer Bot",
 
     "description": "Telegram File Renamer Bot 4GB ",
 
     "keywords": [
 
-        "Gangster Baby Renamer Bot ",
+        "WD Renamer Bot ",
 
         "4GB File",
 
@@ -17,9 +17,9 @@
 
     ],
 
-    "repository": "https://github.com/LazyDeveloperr/Gangster-Baby-V2",
+    "repository": "https://github.com/angel-loveyou/Renamer-V2",
 
-    "success_url": "https://telegram.dog/LazyDeveloperr",
+    "success_url": "https://t.me/Farooq_is_KING",
 
     "env": {
 
