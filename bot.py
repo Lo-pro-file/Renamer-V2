@@ -12,7 +12,7 @@ API_HASH = os.environ.get("API_HASH", "")
 
 STRING = os.environ.get("STRING", "")
 
-
+PORT = os.environ.get("PORT", "8080")
 
 bot = Client(
 
