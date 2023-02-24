@@ -21,6 +21,7 @@ ADMIN = int(os.environ.get("ADMIN", 5827766615))
 bot_username = os.environ.get("BOT_USERNAME","Rename_pro_v1_bot")
 log_channel = int(os.environ.get("LOG_CHANNEL", ""))
 token = os.environ.get('TOKEN', '')
+PORT = os.environ.get("PORT", "8080")
 botid = token.split(':')[0]
 FLOOD = 500
 LAZY_PIC = os.environ.get("LAZY_PIC", "")
