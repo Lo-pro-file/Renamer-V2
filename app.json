@@ -65,6 +65,14 @@
 
         },
 
+        "PORT": {
+
+            "description": "Your Bot PORT 80",
+
+            "required": true
+            
+         },   
+            
         "ADMIN": {
 
             "description":"Add Your User ID",
