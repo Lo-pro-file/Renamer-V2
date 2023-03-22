@@ -36,7 +36,7 @@ async def start(client, message):
         if pre_check == False:
             uploadlimit(message.from_user.id, 1288490188)
             usertype(message.from_user.id, "Free")
-    if ends == None:
+    if ends is None:
         text = f"User ID:- ```{message.from_user.id}```\nPlan :- {user}\nDaly Upload Limit :- {humanbytes(limit)}\nToday Used :- {humanbytes(used)}\nRemain:- {humanbytes(remain)}"
     else:
         normal_date = datetime.fromtimestamp(ends).strftime('%Y-%m-%d')

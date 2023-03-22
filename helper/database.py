@@ -11,8 +11,7 @@ dbcol = db["user"]
 
 
 def total_user():
-    user = dbcol.count_documents({})
-    return user
+    return dbcol.count_documents({})
 
 # insert bot Data
 
@@ -45,7 +44,6 @@ def insert(chat_id):
         dbcol.insert_one(user_det)
     except:
         return True
-        pass
 
 
 def addthumb(chat_id, file_id):
@@ -107,11 +105,7 @@ def find(chat_id):
 
 
 def getid():
-    values = []
-    for key in dbcol.find():
-        id = key["_id"]
-        values.append((id))
-    return values
+    return [key["_id"] for key in dbcol.find()]
 
 def delete(id):
     dbcol.delete_one(id)

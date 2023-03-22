@@ -15,7 +15,4 @@ def check_expi(saved_date):
 	epcho = int(time.mktime(time.strptime(str(today), pattern)))
 	then = saved_date - epcho
 	print(then)
-	if then > 0:
-		return True
-	else:
-		return False
+	return then > 0

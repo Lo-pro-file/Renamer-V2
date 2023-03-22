@@ -178,10 +178,8 @@ async def vid(bot, update):
         pass
     thumb = data[0]
 
-    duration = 0
     metadata = extractMetadata(createParser(file_path))
-    if metadata.has("duration"):
-        duration = metadata.get('duration').seconds
+    duration = metadata.get('duration').seconds if metadata.has("duration") else 0
     if c_caption:
         vid_list = ["filename", "filesize", "duration"]
         new_tex = escape_invalid_curly_brackets(c_caption, vid_list)
@@ -269,15 +267,11 @@ async def aud(bot, update):
     dow_file_name = splitpath[1]
     old_file_name = f"downloads/{dow_file_name}"
     os.rename(old_file_name, file_path)
-    duration = 0
     metadata = extractMetadata(createParser(file_path))
-    if metadata.has("duration"):
-        duration = metadata.get('duration').seconds
+    duration = metadata.get('duration').seconds if metadata.has("duration") else 0
     user_id = int(update.message.chat.id)
     data = find(user_id)
-    c_caption = data[1]
-    thumb = data[0]
-    if c_caption:
+    if c_caption := data[1]:
         aud_list = ["filename", "filesize", "duration"]
         new_tex = escape_invalid_curly_brackets(c_caption, aud_list)
         caption = new_tex.format(filename=new_filename, filesize=humanbytes(
@@ -285,7 +279,7 @@ async def aud(bot, update):
     else:
         caption = f"**{new_filename}**"
 
-    if thumb:
+    if thumb := data[0]:
         ph_path = await bot.download_media(thumb)
         Image.open(ph_path).convert("RGB").save(ph_path)
         img = Image.open(ph_path)

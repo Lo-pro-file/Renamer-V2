@@ -21,9 +21,8 @@ async def delete_caption(client, message):
                                        
 @Client.on_message(filters.private & filters.command('see_caption'))
 async def see_caption(client, message): 
-    caption = find(int(message.chat.id))[1]
-    if caption:
-       await message.reply_text(f"<b><u>Your Caption:</b></u>\n\n`{caption}`")
+    if caption := find(int(message.chat.id))[1]:
+        await message.reply_text(f"<b><u>Your Caption:</b></u>\n\n`{caption}`")
     else:
-       await message.reply_text("**You dont have any custom caption**")
+        await message.reply_text("**You dont have any custom caption**")
           

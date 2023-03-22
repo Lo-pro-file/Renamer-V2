@@ -32,8 +32,6 @@ currentTime = datetime.datetime.now()
 
 if currentTime.hour < 12:
     wish = "❤️ Good morning sweetheart ❤️"
-elif 12 <= currentTime.hour < 12:
-    wish = '🤍 WOODcraft Mirror Zone ™ 🤍'
 else:
     wish = '🦋 WOODcraft Mirror Zone ™ 🦋'
 
@@ -96,9 +94,8 @@ async def start(client, message):
 
 @Client.on_message((filters.private & (filters.document | filters.audio | filters.video)) | filters.channel & (filters.document | filters.audio | filters.video))
 async def send_doc(client, message):
-    update_channel = CHANNEL
     user_id = message.from_user.id
-    if update_channel:
+    if update_channel := CHANNEL:
         try:
             await client.get_chat_member(update_channel, user_id)
         except UserNotParticipant:
@@ -133,20 +130,17 @@ async def send_doc(client, message):
                                                                      InlineKeyboardButton("🦋 Support Group 🦋", url='https://t.me/WOODcraft_Mirror_Topic')],
                                                                      [InlineKeyboardButton("LIMIT", url='https://t.me/Opleech/21')]
                                                                     ]))
-        await message.reply_text(text=f"🦋")
+        await message.reply_text(text="🦋")
         return 
 
     c_time = time.time()
 
-    if user_type == "Free":
-        LIMIT = 600
-    else:
-        LIMIT = 50
+    LIMIT = 600 if user_type == "Free" else 50
     then = used_date + LIMIT
     left = round(then - c_time)
     conversion = datetime.timedelta(seconds=left)
-    ltime = str(conversion)
     if left > 0:
+        ltime = str(conversion)
         await message.reply_text(f"```Sorry Dude I am not only for YOU \n Flood control is active so please wait for {ltime}```", reply_to_message_id=message.id)
     else:
         # Forward a single message
@@ -172,7 +166,7 @@ async def send_doc(client, message):
         if value < file.file_size:
             
             if STRING:
-                if buy_date == None:
+                if buy_date is None:
                     await message.reply_text(f" You Can't Upload More Then {humanbytes(limit)} Used Daily Limit {humanbytes(used)} ", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Upgrade 💰💳", callback_data="upgrade")]]))
                     return
                 pre_check = check_expi(buy_date)
